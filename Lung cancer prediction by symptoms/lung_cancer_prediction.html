@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lung Cancer Prediction Web App</title>
+</head>
+<body>
+	<h1>Lung Cancer Prediction Web App</h1>
+	
+	<form action="{% url 'cancer_prediction' %}" method="POST">
+		{% csrf_token %}
+		<label for="Yellow_Fingers">Yellow Fingers:</label>
+		<input type="text" id="Yellow_Fingers" name="Yellow_Fingers"><br><br>
+		
+		<label for="Anxiety">Anxiety:</label>
+		<input type="text" id="Anxiety" name="Anxiety"><br><br>
+		
+		<label for="Fatigue">Fatigue:</label>
+		<input type="text" id="Fatigue" name="Fatigue"><br><br>
+		
+		<label for="Wheezing">Wheezing:</label>
+		<input type="text" id="Wheezing" name="Wheezing"><br><br>
+		
+		<label for="Coughing">Coughing:</label>
+		<input type="text" id="Coughing" name="Coughing"><br><br>
+		
+		<label for="Shortness_of_Breath">Shortness of Breath:</label>
+		<input type="text" id="Shortness_of_Breath" name="Shortness_of_Breath"><br><br>
+		
+		<label for="Swallowing_Difficulty">Swallowing Difficulty:</label>
+		<input type="text" id="Swallowing_Difficulty" name="Swallowing_Difficulty"><br><br>
+		
+		<label for="Chest_Pain">Chest Pain:</label>
+		<input type="text" id="Chest_Pain" name="Chest_Pain"><br><br>
+		
+		<input type="submit" value="Predict Lung Cancer">
+	</form>
+	
+	{% if diagnosis %}
+		<h3>{{ diagnosis }}</h3>
+	{% endif %}
+</body>
+</html>
